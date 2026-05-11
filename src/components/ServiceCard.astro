@@ -1,0 +1,59 @@
+---
+import type { Service } from '../content/projects';
+import { statusLabel } from '../content/projects';
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+const isLinked = Boolean(service.url);
+const Tag = isLinked ? 'a' : 'article';
+---
+
+<Tag
+  {...isLinked
+    ? {
+        href: service.url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : {}}
+  class:list={[
+    'group block overflow-hidden rounded-[var(--radius)] border bg-muted',
+    'transition-colors duration-150',
+    isLinked ? 'cursor-pointer hover:border-muted-foreground/40' : '',
+  ]}
+>
+  <div class="relative aspect-[3/2] overflow-hidden border-b bg-background">
+    <img
+      src={service.screenshot}
+      alt={service.screenshotAlt}
+      width="1200"
+      height="800"
+      loading="lazy"
+      decoding="async"
+      class:list={[
+        'h-full w-full object-cover',
+        'transition-transform duration-[400ms] ease-out',
+        isLinked ? 'group-hover:scale-[1.015]' : '',
+      ]}
+    />
+  </div>
+
+  <div class="flex flex-col gap-1 px-4 py-3.5">
+    <div class="flex items-center gap-2">
+      <span class="text-[15px] font-medium tracking-tight text-foreground">
+        {service.name}
+      </span>
+      <span
+        class="rounded-full border bg-background px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
+      >
+        {statusLabel(service.status)}
+      </span>
+    </div>
+    <p class="text-[13px] leading-relaxed text-muted-foreground">
+      {service.description}
+    </p>
+  </div>
+</Tag>

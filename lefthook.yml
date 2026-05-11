@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      run: bunx astro check
+    lint:
+      run: bunx eslint .

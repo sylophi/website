@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+import { social } from '../content/projects';
+---
+
+<div class="flex items-center gap-1.5">
+  <a
+    href={social.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    class="inline-flex h-7 w-7 items-center justify-center rounded border text-muted-foreground transition-colors hover:text-foreground"
+  >
+    <Icon name="simple-icons:github" class="h-3.5 w-3.5" />
+  </a>
+
+  <a
+    href={social.twitter}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X (Twitter)"
+    class="inline-flex h-7 w-7 items-center justify-center rounded border text-muted-foreground transition-colors hover:text-foreground"
+  >
+    <Icon name="simple-icons:x" class="h-3 w-3" />
+  </a>
+</div>

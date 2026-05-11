@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+// The actual class on <html> is set by the boot script in Base.astro
+// before paint, so there is no FOUC.
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Toggle color theme"
+  class="inline-flex h-7 w-7 items-center justify-center rounded border bg-background text-muted-foreground transition-colors hover:text-foreground"
+>
+  <Icon name="lucide:sun" class="block h-3.5 w-3.5 dark:hidden" />
+  <Icon name="lucide:moon" class="hidden h-3.5 w-3.5 dark:block" />
+</button>
+
+<script>
+  const button = document.getElementById('theme-toggle');
+  if (button) {
+    button.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.classList.contains('dark') ? 'light' : 'dark';
+      root.classList.toggle('dark', next === 'dark');
+      try {
+        localStorage.setItem('theme', next);
+      } catch {
+        // localStorage may be unavailable; fall back to session-only toggle
+      }
+    });
+  }
+</script>

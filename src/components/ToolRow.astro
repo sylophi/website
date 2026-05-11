@@ -1,0 +1,30 @@
+---
+import type { Tool } from '../content/projects';
+
+interface Props {
+  tool: Tool;
+}
+
+const { tool } = Astro.props;
+---
+
+<a
+  href={tool.repoUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group flex flex-col gap-1 border-b py-3 transition-colors duration-150 sm:flex-row sm:items-baseline sm:gap-4"
+>
+  <span class="text-[13px] font-medium text-foreground sm:shrink-0">
+    {tool.name}
+  </span>
+  <span
+    class="flex-1 text-[13px] text-muted-foreground transition-colors group-hover:text-foreground"
+  >
+    {tool.description}
+  </span>
+  <span
+    class="text-[11px] text-muted-foreground transition-colors group-hover:text-foreground sm:shrink-0"
+  >
+    github &rarr;
+  </span>
+</a>

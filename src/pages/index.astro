@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ToolRow from '../components/ToolRow.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { services, tools } from '../content/projects';
+---
+
+<Base>
+  <div class="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-6 py-10 md:py-16">
+    <header class="mb-16 flex items-center justify-between">
+      <a
+        href="/"
+        class="text-[18px] font-medium tracking-tight text-foreground transition-colors hover:text-muted-foreground"
+        aria-label="sylophi home"
+      >
+        sylophi
+      </a>
+      <SocialLinks />
+    </header>
+
+    <main class="flex flex-col gap-14">
+      <section aria-labelledby="apps-label">
+        <h2
+          id="apps-label"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Apps
+        </h2>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {services.map((service) => <ServiceCard service={service} />)}
+        </div>
+      </section>
+
+      <section aria-labelledby="dev-tools-label">
+        <h2
+          id="dev-tools-label"
+          class="mb-2 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Dev tools
+        </h2>
+        <div class="border-t">
+          {tools.map((tool) => <ToolRow tool={tool} />)}
+        </div>
+      </section>
+    </main>
+  </div>
+</Base>
