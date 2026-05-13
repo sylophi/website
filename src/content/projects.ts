@@ -32,6 +32,14 @@ export const services: Service[] = [
     screenshot: '/screenshots/hewwo.png',
     screenshotAlt: 'hewwo product preview',
   },
+  {
+    name: 'tuneloupe',
+    description:
+      'A tool for studying songs. Designed for precise playback and structural analysis.',
+    status: 'coming-soon',
+    screenshot: '/screenshots/tuneloupe.png',
+    screenshotAlt: 'tuneloupe product preview',
+  },
 ];
 
 export const tools: Tool[] = [
