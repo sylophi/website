@@ -58,6 +58,7 @@ export const tools: Tool[] = [
 export const social = {
   github: 'https://github.com/sylophi',
   twitter: 'https://x.com/sylophi',
+  email: 'hi@sylophi.com',
 } as const;
 
 const STATUS_LABELS: Record<ServiceStatus, string> = {
