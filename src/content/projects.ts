@@ -1,9 +1,9 @@
-export type ServiceStatus = 'coming-soon' | 'alpha' | 'beta' | 'stable';
+export type ProjectStatus = 'coming-soon' | 'alpha' | 'beta' | 'stable';
 
-export type Service = {
+export type Project = {
   name: string;
   description: string;
-  status?: ServiceStatus;
+  status?: ProjectStatus;
   url?: string;
   screenshot: string;
   screenshotAlt: string;
@@ -15,7 +15,7 @@ export type Tool = {
   repoUrl: string;
 };
 
-export const services: Service[] = [
+export const apps: Project[] = [
   {
     name: 'daramdrop',
     description:
@@ -42,7 +42,7 @@ export const services: Service[] = [
   },
 ];
 
-export const devApps: Service[] = [
+export const devApps: Project[] = [
   {
     name: 'shigoto-no-mori',
     description:
@@ -72,13 +72,13 @@ export const social = {
   email: 'hi@sylophi.com',
 } as const;
 
-const STATUS_LABELS: Record<ServiceStatus, string> = {
+const STATUS_LABELS: Record<ProjectStatus, string> = {
   'coming-soon': 'coming soon',
   alpha: 'alpha',
   beta: 'beta',
   stable: 'stable',
 };
 
-export function statusLabel(status: ServiceStatus): string {
+export function statusLabel(status: ProjectStatus): string {
   return STATUS_LABELS[status];
 }
