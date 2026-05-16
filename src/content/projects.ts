@@ -3,7 +3,7 @@ export type ServiceStatus = 'coming-soon' | 'alpha' | 'beta' | 'stable';
 export type Service = {
   name: string;
   description: string;
-  status: ServiceStatus;
+  status?: ServiceStatus;
   url?: string;
   screenshot: string;
   screenshotAlt: string;
@@ -39,6 +39,17 @@ export const services: Service[] = [
     status: 'coming-soon',
     screenshot: '/screenshots/songloupe.png',
     screenshotAlt: 'songloupe product preview',
+  },
+];
+
+export const devApps: Service[] = [
+  {
+    name: 'shigoto-no-mori',
+    description:
+      'A desktop app for managing many git worktrees. Built around a focused GUI and one-click launchers per worktree.',
+    url: 'https://github.com/sylophi/shigoto-no-mori',
+    screenshot: '/screenshots/shigoto-no-mori.png',
+    screenshotAlt: 'shigoto-no-mori product preview',
   },
 ];
 

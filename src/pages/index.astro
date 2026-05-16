@@ -3,15 +3,15 @@ import Base from '../layouts/Base.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ToolRow from '../components/ToolRow.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import { services, tools } from '../content/projects';
+import { services, devApps, tools } from '../content/projects';
 ---
 
 <Base>
   <div class="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-6 py-10 md:py-16">
     <header class="mb-16 flex items-center justify-between">
       <h1 class="leading-tight">
-        <span class="text-foreground block text-[18px] font-medium tracking-tight">harper</span>
-        <span class="text-muted-foreground mt-0.5 block text-[11px] tracking-wide lowercase">
+        <span class="block text-[18px] font-medium tracking-tight text-foreground">harper</span>
+        <span class="mt-0.5 block text-[11px] tracking-wide text-muted-foreground lowercase">
           sylophi
         </span>
       </h1>
@@ -34,10 +34,19 @@ import { services, tools } from '../content/projects';
       <section aria-labelledby="dev-tools-label">
         <h2
           id="dev-tools-label"
-          class="mb-2 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
           Dev tools
         </h2>
+        {
+          devApps.length > 0 && (
+            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              {devApps.map((app) => (
+                <ServiceCard service={app} />
+              ))}
+            </div>
+          )
+        }
         <div class="border-t">
           {tools.map((tool) => <ToolRow tool={tool} />)}
         </div>
