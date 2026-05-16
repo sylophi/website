@@ -1,3 +1,9 @@
+import type { ImageMetadata } from 'astro';
+import daramdropShot from '../assets/screenshots/daramdrop.png';
+import hewwoShot from '../assets/screenshots/hewwo.png';
+import songloupeShot from '../assets/screenshots/songloupe.png';
+import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
+
 export type ProjectStatus = 'coming-soon' | 'alpha' | 'beta' | 'stable';
 
 export type Project = {
@@ -5,7 +11,7 @@ export type Project = {
   description: string;
   status?: ProjectStatus;
   url?: string;
-  screenshot: string;
+  screenshot: ImageMetadata;
   screenshotAlt: string;
 };
 
@@ -22,23 +28,23 @@ export const apps: Project[] = [
       'A personal stash for things to look at later. Built for quick saving and easy retrieval.',
     status: 'alpha',
     url: 'https://daramdrop.com',
-    screenshot: '/screenshots/daramdrop.png',
-    screenshotAlt: 'daramdrop product preview',
+    screenshot: daramdropShot,
+    screenshotAlt: 'daramdrop project preview',
   },
   {
     name: 'hewwo',
     description: 'A reimagination of contacts. Designed for social accounts, syncing, and sharing.',
     status: 'coming-soon',
-    screenshot: '/screenshots/hewwo.png',
-    screenshotAlt: 'hewwo product preview',
+    screenshot: hewwoShot,
+    screenshotAlt: 'hewwo project preview',
   },
   {
     name: 'songloupe',
     description:
       'A tool for studying songs. Designed for precise playback and structural analysis.',
     status: 'coming-soon',
-    screenshot: '/screenshots/songloupe.png',
-    screenshotAlt: 'songloupe product preview',
+    screenshot: songloupeShot,
+    screenshotAlt: 'songloupe project preview',
   },
 ];
 
@@ -48,8 +54,8 @@ export const devApps: Project[] = [
     description:
       'A desktop app for managing many git worktrees. Built around a focused GUI and one-click launchers per worktree.',
     url: 'https://github.com/sylophi/shigoto-no-mori',
-    screenshot: '/screenshots/shigoto-no-mori.png',
-    screenshotAlt: 'shigoto-no-mori product preview',
+    screenshot: shigotoNoMoriShot,
+    screenshotAlt: 'shigoto-no-mori project preview',
   },
 ];
 
