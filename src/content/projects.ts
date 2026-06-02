@@ -61,6 +61,11 @@ export const devApps: Project[] = [
 
 export const tools: Tool[] = [
   {
+    name: 'PReview',
+    description: 'A git diffing tool that reviews changes in a full editor with project-wide context.',
+    repoUrl: 'https://github.com/sylophi/PReview',
+  },
+  {
     name: 'port-pool',
     description: 'Simple port allocation for managing multiple dev environments.',
     repoUrl: 'https://github.com/sylophi/port-pool',
