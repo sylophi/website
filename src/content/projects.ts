@@ -18,7 +18,8 @@ export type Project = {
 export type Tool = {
   name: string;
   description: string;
-  repoUrl: string;
+  repoUrl?: string;
+  status?: ProjectStatus;
 };
 
 export const apps: Project[] = [
@@ -26,8 +27,7 @@ export const apps: Project[] = [
     name: 'daramdrop',
     description:
       'A personal stash for things to look at later. Built for quick saving and easy retrieval.',
-    status: 'alpha',
-    url: 'https://daramdrop.com',
+    status: 'coming-soon',
     screenshot: daramdropShot,
     screenshotAlt: 'daramdrop project preview',
   },
@@ -38,6 +38,9 @@ export const apps: Project[] = [
     screenshot: hewwoShot,
     screenshotAlt: 'hewwo project preview',
   },
+];
+
+export const musicApps: Project[] = [
   {
     name: 'songloupe',
     description:
@@ -45,6 +48,14 @@ export const apps: Project[] = [
     status: 'coming-soon',
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
+  },
+];
+
+export const musicTools: Tool[] = [
+  {
+    name: 'LiVer',
+    description: 'A version manager for Ableton Live sets.',
+    status: 'coming-soon',
   },
 ];
 
