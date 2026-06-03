@@ -31,27 +31,6 @@ import { apps, devApps, tools, musicApps, musicTools } from '../content/projects
         </div>
       </section>
 
-      <section aria-labelledby="music-tools-label">
-        <h2
-          id="music-tools-label"
-          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
-        >
-          Music tools
-        </h2>
-        {
-          musicApps.length > 0 && (
-            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {musicApps.map((app) => (
-                <ProjectCard project={app} />
-              ))}
-            </div>
-          )
-        }
-        <div class="border-t">
-          {musicTools.map((tool) => <ToolRow tool={tool} />)}
-        </div>
-      </section>
-
       <section aria-labelledby="dev-tools-label">
         <h2
           id="dev-tools-label"
@@ -70,6 +49,27 @@ import { apps, devApps, tools, musicApps, musicTools } from '../content/projects
         }
         <div class="border-t">
           {tools.map((tool) => <ToolRow tool={tool} />)}
+        </div>
+      </section>
+
+      <section aria-labelledby="music-tools-label">
+        <h2
+          id="music-tools-label"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Music tools
+        </h2>
+        {
+          musicApps.length > 0 && (
+            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              {musicApps.map((app) => (
+                <ProjectCard project={app} />
+              ))}
+            </div>
+          )
+        }
+        <div class="border-t">
+          {musicTools.map((tool) => <ToolRow tool={tool} />)}
         </div>
       </section>
     </main>
