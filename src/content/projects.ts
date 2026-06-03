@@ -57,6 +57,12 @@ export const musicTools: Tool[] = [
     description: 'A version manager for Ableton Live sets.',
     status: 'coming-soon',
   },
+  {
+    name: 'AIbleton',
+    description:
+      'An experimental chatbot that automates tedious operations in Ableton Live with the Ableton Live SDK.',
+    status: 'coming-soon',
+  },
 ];
 
 export const devApps: Project[] = [
