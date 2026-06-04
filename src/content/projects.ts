@@ -61,7 +61,7 @@ export const musicTools: Tool[] = [
     name: 'AIbleton',
     description:
       'An experimental chatbot that automates tedious operations in Ableton Live with the Ableton Live SDK.',
-    status: 'coming-soon',
+    repoUrl: 'https://github.com/sylophi/AIbleton',
   },
 ];
 
