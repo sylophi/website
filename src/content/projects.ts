@@ -57,11 +57,13 @@ export const musicTools: Tool[] = [
     description: 'A version manager for Ableton Live sets.',
     status: 'coming-soon',
   },
+];
+
+export const gameTools: Tool[] = [
   {
-    name: 'AIbleton',
-    description:
-      'An experimental chatbot that automates tedious operations in Ableton Live with the Ableton Live SDK.',
-    repoUrl: 'https://github.com/sylophi/AIbleton',
+    name: 'mise-en-scene',
+    description: 'A game engine inspired by Godot Engine and React.',
+    repoUrl: 'https://github.com/sylophi/mise-en-scene',
   },
 ];
 
