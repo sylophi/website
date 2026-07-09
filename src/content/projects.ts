@@ -26,14 +26,14 @@ export const apps: Project[] = [
   {
     name: 'daramdrop',
     description:
-      'A personal stash for things to look at later. Built for quick saving and easy retrieval.',
+      'A personal stash for things to look at later. Built for quick saving and deep retrieval.',
     status: 'coming-soon',
     screenshot: daramdropShot,
     screenshotAlt: 'daramdrop project preview',
   },
   {
     name: 'hewwo',
-    description: 'A reimagination of contacts. Designed for social accounts, syncing, and sharing.',
+    description: "A reimagination of contacts. The address book that's never out of date.",
     status: 'coming-soon',
     screenshot: hewwoShot,
     screenshotAlt: 'hewwo project preview',
@@ -76,7 +76,8 @@ export const musicTools: Tool[] = [
 export const gameTools: Tool[] = [
   {
     name: 'mise-en-scene',
-    description: 'A game engine inspired by Godot Engine and React.',
+    description:
+      'A lightweight game engine built around TypeScript and inspired by Godot Engine. Everything renders as React components.',
     repoUrl: 'https://github.com/sylophi/mise-en-scene',
   },
 ];
