@@ -4,9 +4,10 @@ import { statusLabel } from '../content/projects';
 
 interface Props {
   tool: Tool;
+  showStatusColumn?: boolean;
 }
 
-const { tool } = Astro.props;
+const { tool, showStatusColumn = false } = Astro.props;
 const isLinked = Boolean(tool.repoUrl);
 const Tag = isLinked ? 'a' : 'div';
 ---
@@ -19,19 +20,21 @@ const Tag = isLinked ? 'a' : 'div';
         rel: 'noopener noreferrer',
       }
     : {}}
-  class="group flex flex-col gap-1 border-b py-3 transition-colors duration-150 last:border-b-0 sm:flex-row sm:items-baseline sm:gap-4"
+  class="group flex flex-col gap-1 border-b py-3 transition-colors duration-150 first:pt-0 last:border-b-0 last:pb-0 sm:col-span-full sm:grid sm:grid-cols-subgrid sm:items-center sm:gap-x-4"
 >
-  <span class="flex items-center gap-2 sm:shrink-0">
+  <span class="flex items-center gap-2 sm:contents">
     <span class="text-[13px] font-medium text-foreground">
       {tool.name}
     </span>
-    {
-      tool.status && (
-        <span class="rounded-full border bg-background px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-          {statusLabel(tool.status)}
-        </span>
-      )
-    }
+    <span class:list={[!showStatusColumn && 'sm:hidden']}>
+      {
+        tool.status && (
+          <span class="rounded-full border bg-background px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+            {statusLabel(tool.status)}
+          </span>
+        )
+      }
+    </span>
   </span>
   <span
     class:list={[

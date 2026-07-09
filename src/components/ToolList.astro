@@ -1,0 +1,20 @@
+---
+import type { Tool } from '../content/projects';
+import ToolRow from './ToolRow.astro';
+
+interface Props {
+  tools: Tool[];
+}
+
+const { tools } = Astro.props;
+const hasStatusColumn = tools.some((tool) => tool.status);
+---
+
+<div
+  class:list={[
+    'sm:grid sm:gap-x-4',
+    hasStatusColumn ? 'sm:grid-cols-[auto_auto_1fr_auto]' : 'sm:grid-cols-[auto_1fr_auto]',
+  ]}
+>
+  {tools.map((tool) => <ToolRow tool={tool} showStatusColumn={hasStatusColumn} />)}
+</div>
