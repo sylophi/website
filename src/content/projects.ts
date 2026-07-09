@@ -4,7 +4,7 @@ import hewwoShot from '../assets/screenshots/hewwo.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 
-export type ProjectStatus = 'coming-soon' | 'alpha' | 'beta' | 'stable';
+export type ProjectStatus = 'coming-soon' | 'in-development' | 'alpha' | 'beta' | 'stable';
 
 export type Project = {
   name: string;
@@ -37,6 +37,15 @@ export const apps: Project[] = [
     status: 'coming-soon',
     screenshot: hewwoShot,
     screenshotAlt: 'hewwo project preview',
+  },
+];
+
+export const appTools: Tool[] = [
+  {
+    name: 'Schedule Compare',
+    description: 'An app for UBC students to see which courses they share with friends.',
+    status: 'in-development',
+    repoUrl: 'https://github.com/spinbow/schedulecompare',
   },
 ];
 
@@ -104,6 +113,7 @@ export const social = {
 
 const STATUS_LABELS: Record<ProjectStatus, string> = {
   'coming-soon': 'coming soon',
+  'in-development': 'in development',
   alpha: 'alpha',
   beta: 'beta',
   stable: 'stable',

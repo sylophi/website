@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ToolRow from '../components/ToolRow.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import { apps, devApps, tools, musicApps, musicTools, gameTools } from '../content/projects';
+import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from '../content/projects';
 ---
 
 <Base>
@@ -26,8 +26,11 @@ import { apps, devApps, tools, musicApps, musicTools, gameTools } from '../conte
         >
           Apps
         </h2>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
           {apps.map((app) => <ProjectCard project={app} />)}
+        </div>
+        <div>
+          {appTools.map((tool) => <ToolRow tool={tool} />)}
         </div>
       </section>
 
