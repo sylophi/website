@@ -42,6 +42,11 @@ export const apps: Project[] = [
 
 export const appTools: Tool[] = [
   {
+    name: 'Picto Place',
+    description: 'A personal library for images and illustrations.',
+    status: 'coming-soon',
+  },
+  {
     name: 'Schedule Compare',
     description: 'An app for UBC students to see which courses they share with friends.',
     status: 'in-development',
