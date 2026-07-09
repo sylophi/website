@@ -69,7 +69,7 @@ export const musicTools: Tool[] = [
   {
     name: 'LiVer',
     description: 'A version manager for Ableton Live sets.',
-    status: 'coming-soon',
+    status: 'in-development',
   },
 ];
 
