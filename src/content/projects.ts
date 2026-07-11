@@ -101,7 +101,7 @@ export const tools: Tool[] = [
   },
   {
     name: 'port-pool',
-    description: 'Simple port allocation for managing multiple dev environments.',
+    description: 'Simple port allocation tool for testing multiple dev environments in parallel.',
     repoUrl: 'https://github.com/sylophi/port-pool',
   },
   {
