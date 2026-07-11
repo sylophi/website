@@ -34,7 +34,7 @@ export const apps: Project[] = [
   {
     name: 'hewwo',
     description: "A reimagination of contacts. The address book that's never out of date.",
-    status: 'coming-soon',
+    status: 'in-development',
     screenshot: hewwoShot,
     screenshotAlt: 'hewwo project preview',
   },
