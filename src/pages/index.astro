@@ -19,27 +19,23 @@ import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from
     </header>
 
     <main class="flex flex-col gap-14">
-      <section aria-labelledby="apps-label">
+      <section aria-labelledby="music-tools-label">
         <h2
-          id="apps-label"
+          id="music-tools-label"
           class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
-          Apps
+          Music tools
         </h2>
-        <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {apps.map((app) => <ProjectCard project={app} />)}
-        </div>
-        <ToolList tools={appTools} />
-      </section>
-
-      <section aria-labelledby="game-dev-label">
-        <h2
-          id="game-dev-label"
-          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
-        >
-          Game development
-        </h2>
-        <ToolList tools={gameTools} />
+        {
+          musicApps.length > 0 && (
+            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              {musicApps.map((app) => (
+                <ProjectCard project={app} />
+              ))}
+            </div>
+          )
+        }
+        <ToolList tools={musicTools} />
       </section>
 
       <section aria-labelledby="dev-tools-label">
@@ -61,23 +57,27 @@ import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from
         <ToolList tools={tools} />
       </section>
 
-      <section aria-labelledby="music-tools-label">
+      <section aria-labelledby="game-dev-label">
         <h2
-          id="music-tools-label"
+          id="game-dev-label"
           class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
-          Music tools
+          Game development
         </h2>
-        {
-          musicApps.length > 0 && (
-            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {musicApps.map((app) => (
-                <ProjectCard project={app} />
-              ))}
-            </div>
-          )
-        }
-        <ToolList tools={musicTools} />
+        <ToolList tools={gameTools} />
+      </section>
+
+      <section aria-labelledby="apps-label">
+        <h2
+          id="apps-label"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Apps
+        </h2>
+        <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {apps.map((app) => <ProjectCard project={app} />)}
+        </div>
+        <ToolList tools={appTools} />
       </section>
     </main>
   </div>

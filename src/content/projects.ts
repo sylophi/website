@@ -59,7 +59,8 @@ export const musicApps: Project[] = [
     name: 'songloupe',
     description:
       'A tool for studying songs. Designed for precise playback and structural analysis.',
-    status: 'coming-soon',
+    status: 'alpha',
+    url: 'https://songloupe.com/',
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
   },
