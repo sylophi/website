@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
 import hewwoShot from '../assets/screenshots/hewwo.png';
+import pictoPlaceShot from '../assets/screenshots/picto-place.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 
@@ -32,6 +33,13 @@ export const apps: Project[] = [
     screenshotAlt: 'daramdrop project preview',
   },
   {
+    name: 'Picto Place',
+    description: 'A personal library for images and illustrations.',
+    status: 'coming-soon',
+    screenshot: pictoPlaceShot,
+    screenshotAlt: 'Picto Place project preview',
+  },
+  {
     name: 'hewwo',
     description: "A reimagination of contacts. The address book that's never out of date.",
     status: 'in-development',
@@ -41,11 +49,6 @@ export const apps: Project[] = [
 ];
 
 export const appTools: Tool[] = [
-  {
-    name: 'Picto Place',
-    description: 'A personal library for images and illustrations.',
-    status: 'coming-soon',
-  },
   {
     name: 'Schedule Compare',
     description: 'An app for UBC students to see which courses they share with friends.',
