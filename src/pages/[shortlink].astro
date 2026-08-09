@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { redirects } from '../content/redirects';
+
+export function getStaticPaths() {
+  return Object.entries(redirects).map(([shortlink, destination]) => ({
+    params: { shortlink },
+    props: { destination },
+  }));
+}
+
+const { shortlink } = Astro.params;
+const { destination } = Astro.props;
+const linkLabel = destination.replace('https://', '');
+---
+
+<Base title={`Redirecting to ${destination}`} description={`Redirecting to ${destination}`}>
+  <Fragment slot="head">
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={destination} />
+  </Fragment>
+
+  <main class="mx-auto flex min-h-screen w-full max-w-2xl flex-col justify-center px-6 py-10">
+    <p class="mb-3 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase">
+      Redirecting
+    </p>
+    <h1 class="text-[18px] font-medium tracking-tight text-foreground">/{shortlink}</h1>
+    <a
+      href={destination}
+      class="mt-4 text-[13px] text-muted-foreground transition-colors duration-150 hover:text-foreground"
+    >
+      {linkLabel} →
+    </a>
+  </main>
+</Base>
