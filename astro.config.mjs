@@ -9,6 +9,9 @@ const port = env.PORT ? Number(env.PORT) : undefined;
 export default defineConfig({
   output: 'static',
   server: port ? { port } : undefined,
+  redirects: {
+    '/shigomori': 'https://github.com/sylophi/shigoto-no-mori',
+  },
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
