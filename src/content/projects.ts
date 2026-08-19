@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
+import leatcerShot from '../assets/screenshots/leatcer.png';
 import hewwoShot from '../assets/screenshots/hewwo.png';
 import pictoPlaceShot from '../assets/screenshots/picto-place.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
@@ -24,6 +25,14 @@ export type Tool = {
 };
 
 export const apps: Project[] = [
+  {
+    name: 'leatcer',
+    description: "A simple transcription tool using OpenAI's models.",
+    status: 'alpha',
+    url: 'https://leatcer.com/',
+    screenshot: leatcerShot,
+    screenshotAlt: 'leatcer project preview',
+  },
   {
     name: 'daramdrop',
     description:
