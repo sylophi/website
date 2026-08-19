@@ -19,25 +19,6 @@ import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from
     </header>
 
     <main class="flex flex-col gap-14">
-      <section aria-labelledby="music-tools-label">
-        <h2
-          id="music-tools-label"
-          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
-        >
-          Music tools
-        </h2>
-        {
-          musicApps.length > 0 && (
-            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {musicApps.map((app) => (
-                <ProjectCard project={app} />
-              ))}
-            </div>
-          )
-        }
-        <ToolList tools={musicTools} />
-      </section>
-
       <section aria-labelledby="dev-tools-label">
         <h2
           id="dev-tools-label"
@@ -55,6 +36,25 @@ import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from
           )
         }
         <ToolList tools={tools} />
+      </section>
+
+      <section aria-labelledby="music-tools-label">
+        <h2
+          id="music-tools-label"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Music tools
+        </h2>
+        {
+          musicApps.length > 0 && (
+            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              {musicApps.map((app) => (
+                <ProjectCard project={app} />
+              ))}
+            </div>
+          )
+        }
+        <ToolList tools={musicTools} />
       </section>
 
       <section aria-labelledby="game-dev-label">
