@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ToolList from '../components/ToolList.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from '../content/projects';
+import { apps, appTools, devApps, tools, musicAudioApps, musicAudioTools, gameTools } from '../content/projects';
 ---
 
 <Base>
@@ -38,23 +38,23 @@ import { apps, appTools, devApps, tools, musicApps, musicTools, gameTools } from
         <ToolList tools={tools} />
       </section>
 
-      <section aria-labelledby="music-tools-label">
+      <section aria-labelledby="music-audio-label">
         <h2
-          id="music-tools-label"
+          id="music-audio-label"
           class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
-          Music tools
+          Music &amp; audio
         </h2>
         {
-          musicApps.length > 0 && (
+          musicAudioApps.length > 0 && (
             <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {musicApps.map((app) => (
+              {musicAudioApps.map((app) => (
                 <ProjectCard project={app} />
               ))}
             </div>
           )
         }
-        <ToolList tools={musicTools} />
+        <ToolList tools={musicAudioTools} />
       </section>
 
       <section aria-labelledby="game-dev-label">

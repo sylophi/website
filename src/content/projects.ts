@@ -26,14 +26,6 @@ export type Tool = {
 
 export const apps: Project[] = [
   {
-    name: 'leatcer',
-    description: "A simple transcription tool using OpenAI's models.",
-    status: 'alpha',
-    url: 'https://leatcer.com/',
-    screenshot: leatcerShot,
-    screenshotAlt: 'leatcer project preview',
-  },
-  {
     name: 'daramdrop',
     description:
       'A personal stash for things to look at later. Built for quick saving and deep retrieval.',
@@ -66,7 +58,7 @@ export const appTools: Tool[] = [
   },
 ];
 
-export const musicApps: Project[] = [
+export const musicAudioApps: Project[] = [
   {
     name: 'songloupe',
     description:
@@ -76,12 +68,25 @@ export const musicApps: Project[] = [
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
   },
+  {
+    name: 'Leatcer',
+    description: "A simple transcription tool using OpenAI's models.",
+    status: 'alpha',
+    url: 'https://leatcer.com/',
+    screenshot: leatcerShot,
+    screenshotAlt: 'Leatcer project preview',
+  },
 ];
 
-export const musicTools: Tool[] = [
+export const musicAudioTools: Tool[] = [
   {
     name: 'LiVer',
     description: 'A version manager for Ableton Live sets.',
+    status: 'in-development',
+  },
+  {
+    name: 'Mycelium',
+    description: 'A tool for syncing Ableton Live environments across machines.',
     status: 'in-development',
   },
 ];
