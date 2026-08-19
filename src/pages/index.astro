@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ToolList from '../components/ToolList.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import { apps, appTools, devApps, tools, musicAudioApps, musicAudioTools, gameTools } from '../content/projects';
+import { webApps, webAppTools, devApps, tools, musicAudioApps, musicAudioTools, gameTools } from '../content/projects';
 ---
 
 <Base>
@@ -67,17 +67,17 @@ import { apps, appTools, devApps, tools, musicAudioApps, musicAudioTools, gameTo
         <ToolList tools={gameTools} />
       </section>
 
-      <section aria-labelledby="apps-label">
+      <section aria-labelledby="web-apps-label">
         <h2
-          id="apps-label"
+          id="web-apps-label"
           class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
-          Apps
+          Web apps
         </h2>
         <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {apps.map((app) => <ProjectCard project={app} />)}
+          {webApps.map((app) => <ProjectCard project={app} />)}
         </div>
-        <ToolList tools={appTools} />
+        <ToolList tools={webAppTools} />
       </section>
     </main>
   </div>

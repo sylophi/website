@@ -24,7 +24,7 @@ export type Tool = {
   status?: ProjectStatus;
 };
 
-export const apps: Project[] = [
+export const webApps: Project[] = [
   {
     name: 'daramdrop',
     description:
@@ -49,7 +49,7 @@ export const apps: Project[] = [
   },
 ];
 
-export const appTools: Tool[] = [
+export const webAppTools: Tool[] = [
   {
     name: 'Schedule Compare',
     description: 'An app for UBC students to see which courses they share with friends.',
