@@ -99,14 +99,14 @@ export const devApps: Project[] = [
 
 export const tools: Tool[] = [
   {
+    name: 'dittofleet',
+    description: 'A collection of tools for easier multi-environment agentic development.',
+    repoUrl: 'https://github.com/dittofleet',
+  },
+  {
     name: 'PReviewer',
     description: 'A git diffing tool that reviews changes in a full editor with project-wide context.',
     repoUrl: 'https://github.com/sylophi/PReviewer',
-  },
-  {
-    name: 'port-pool',
-    description: 'Simple port allocation tool for testing multiple dev environments in parallel.',
-    repoUrl: 'https://github.com/sylophi/port-pool',
   },
   {
     name: 'repo-documenter',
