@@ -67,15 +67,7 @@ export const musicAudioApps: Project[] = [
     url: 'https://songloupe.com/',
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
-  },
-  {
-    name: 'Leatcer',
-    description: "A simple transcription tool using OpenAI's models.",
-    status: 'alpha',
-    url: 'https://leatcer.com/',
-    screenshot: leatcerShot,
-    screenshotAlt: 'Leatcer project preview',
-  },
+  }
 ];
 
 export const musicAudioTools: Tool[] = [
