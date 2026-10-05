@@ -13,6 +13,7 @@ export type Project = {
   description: string;
   status?: ProjectStatus;
   url?: string;
+  repoUrl?: string;
   screenshot: ImageMetadata;
   screenshotAlt: string;
 };
@@ -97,7 +98,8 @@ export const devApps: Project[] = [
     name: 'shigoto-no-mori',
     description:
       'A desktop app for managing many git worktrees. Built around a focused GUI and one-click launchers per worktree.',
-    url: 'https://github.com/sylophi/shigoto-no-mori',
+    url: 'https://shigomori.com/',
+    repoUrl: 'https://github.com/sylophi/shigoto-no-mori',
     screenshot: shigotoNoMoriShot,
     screenshotAlt: 'shigoto-no-mori project preview',
   },

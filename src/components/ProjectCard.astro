@@ -9,21 +9,14 @@ interface Props {
 
 const { project } = Astro.props;
 const isLinked = Boolean(project.url);
-const Tag = isLinked ? 'a' : 'article';
+const NameTag = isLinked ? 'a' : 'span';
 ---
 
-<Tag
-  {...isLinked
-    ? {
-        href: project.url,
-        target: '_blank',
-        rel: 'noopener noreferrer',
-      }
-    : {}}
+<article
   class:list={[
-    'group block overflow-hidden rounded-[var(--radius)] border bg-muted',
+    'group relative block overflow-hidden rounded-[var(--radius)] border bg-muted',
     'transition-colors duration-150',
-    isLinked ? 'cursor-pointer hover:border-muted-foreground/40' : '',
+    isLinked ? 'hover:border-muted-foreground/40' : '',
   ]}
 >
   <div class="relative aspect-[3/2] overflow-hidden border-b bg-background">
@@ -44,9 +37,22 @@ const Tag = isLinked ? 'a' : 'article';
 
   <div class="flex flex-col gap-1 px-4 py-3.5">
     <div class="flex items-center gap-2">
-      <span class="text-[15px] font-medium tracking-tight text-foreground">
+      <NameTag
+        {...isLinked
+          ? {
+              href: project.url,
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            }
+          : {}}
+        class:list={[
+          'text-[15px] font-medium tracking-tight text-foreground',
+          // Stretch the link over the whole card so it stays clickable everywhere
+          isLinked ? 'after:absolute after:inset-0' : '',
+        ]}
+      >
         {project.name}
-      </span>
+      </NameTag>
       {
         project.status && (
           <span class="rounded-full border bg-background px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
@@ -54,9 +60,21 @@ const Tag = isLinked ? 'a' : 'article';
           </span>
         )
       }
+      {
+        project.repoUrl && (
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative z-10 ml-auto text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+          >
+            github →
+          </a>
+        )
+      }
     </div>
     <p class="text-[13px] leading-relaxed text-muted-foreground">
       {project.description}
     </p>
   </div>
-</Tag>
+</article>
