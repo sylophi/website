@@ -1,8 +1,5 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
-import leatcerShot from '../assets/screenshots/leatcer.png';
-import hewwoShot from '../assets/screenshots/hewwo.png';
-import pictoPlaceShot from '../assets/screenshots/picto-place.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 
@@ -30,23 +27,9 @@ export const webApps: Project[] = [
     name: 'daramdrop',
     description:
       'A personal stash for things to look at later. Built for quick saving and deep retrieval.',
-    status: 'coming-soon',
+    status: 'in-development',
     screenshot: daramdropShot,
     screenshotAlt: 'daramdrop project preview',
-  },
-  {
-    name: 'Picto Place',
-    description: 'A personal library for images and illustrations.',
-    status: 'coming-soon',
-    screenshot: pictoPlaceShot,
-    screenshotAlt: 'Picto Place project preview',
-  },
-  {
-    name: 'hewwo',
-    description: "A reimagination of contacts. The address book that's never out of date.",
-    status: 'in-development',
-    screenshot: hewwoShot,
-    screenshotAlt: 'hewwo project preview',
   },
 ];
 
@@ -75,11 +58,6 @@ export const musicAudioTools: Tool[] = [
   {
     name: 'LiVer',
     description: 'A version manager for Ableton Live sets.',
-    status: 'in-development',
-  },
-  {
-    name: 'Mycelium',
-    description: 'A tool for syncing Ableton Live environments across machines.',
     status: 'in-development',
   },
 ];
