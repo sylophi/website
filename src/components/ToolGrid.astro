@@ -1,0 +1,47 @@
+---
+import type { Tool } from '../content/projects';
+
+interface Props {
+  tools: Tool[];
+}
+
+const { tools } = Astro.props;
+---
+
+<div class="-my-3 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+  {
+    tools.map((tool) => (
+      <a
+        href={tool.repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col gap-1 border-b py-3 transition-colors duration-150 last:border-b-0 sm:[&:nth-child(odd):nth-last-child(2)]:border-b-0"
+      >
+        <span class="flex items-center gap-2">
+          {tool.icon && (
+            <>
+              <img
+                src={`${tool.icon}.svg`}
+                alt=""
+                width="20"
+                height="20"
+                class="size-5 dark:hidden"
+              />
+              <img
+                src={`${tool.icon}-dark.svg`}
+                alt=""
+                width="20"
+                height="20"
+                class="hidden size-5 dark:block"
+              />
+            </>
+          )}
+          <span class="text-[13px] font-medium text-foreground">{tool.name}</span>
+        </span>
+        <span class="text-[13px] text-muted-foreground transition-colors group-hover:text-foreground">
+          {tool.description}
+        </span>
+      </a>
+    ))
+  }
+</div>

@@ -1,9 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import ToolGrid from '../components/ToolGrid.astro';
 import ToolList from '../components/ToolList.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import { webApps, webAppTools, devApps, tools, musicAudioApps, musicAudioTools, gameTools } from '../content/projects';
+import {
+  webApps,
+  webAppTools,
+  devApps,
+  tools,
+  dittofleet,
+  musicAudioApps,
+  musicAudioTools,
+  gameTools,
+} from '../content/projects';
 ---
 
 <Base>
@@ -36,6 +46,38 @@ import { webApps, webAppTools, devApps, tools, musicAudioApps, musicAudioTools, 
           )
         }
         <ToolList tools={tools} />
+      </section>
+
+      <section aria-labelledby="dittofleet-label">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <div>
+            <h2
+              id="dittofleet-label"
+              class="mb-1.5 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+            >
+              dittofleet
+            </h2>
+            <p class="text-[13px] text-muted-foreground">{dittofleet.description}</p>
+          </div>
+          <a
+            href={dittofleet.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+          >
+            github →
+          </a>
+        </div>
+        <div class="flex flex-col gap-6">
+          {
+            dittofleet.groups.map((group) => (
+              <div>
+                <h3 class="mb-3 text-[12px] text-muted-foreground">{group.name}</h3>
+                <ToolGrid tools={group.tools} />
+              </div>
+            ))
+          }
+        </div>
       </section>
 
       <section aria-labelledby="music-audio-label">

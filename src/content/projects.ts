@@ -20,6 +20,8 @@ export type Tool = {
   description: string;
   repoUrl?: string;
   status?: ProjectStatus;
+  // Path under public/, without extension; a -dark variant is served in dark mode
+  icon?: string;
 };
 
 export const webApps: Project[] = [
@@ -51,7 +53,7 @@ export const musicAudioApps: Project[] = [
     url: 'https://songloupe.com/',
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
-  }
+  },
 ];
 
 export const musicAudioTools: Tool[] = [
@@ -85,13 +87,9 @@ export const devApps: Project[] = [
 
 export const tools: Tool[] = [
   {
-    name: 'dittofleet',
-    description: 'A collection of tools for easier multi-environment agentic development.',
-    repoUrl: 'https://github.com/dittofleet',
-  },
-  {
     name: 'PReviewer',
-    description: 'A git diffing tool that reviews changes in a full editor with project-wide context.',
+    description:
+      'A git diffing tool that reviews changes in a full editor with project-wide context.',
     repoUrl: 'https://github.com/sylophi/PReviewer',
   },
   {
@@ -100,6 +98,69 @@ export const tools: Tool[] = [
     repoUrl: 'https://github.com/sylophi/repo-documenter',
   },
 ];
+
+// Each tool lives at github.com/dittofleet/<name>, with icons copied from its repo into public/dittofleet/
+function dittofleetTool(name: string, description: string): Tool {
+  return {
+    name,
+    description,
+    repoUrl: `https://github.com/dittofleet/${name}`,
+    icon: `/dittofleet/${name}`,
+  };
+}
+
+export const dittofleet = {
+  url: 'https://github.com/dittofleet',
+  description: 'Tools for easier multi-environment agentic development.',
+  groups: [
+    {
+      name: 'For agents',
+      tools: [
+        dittofleetTool(
+          'weblab',
+          'Test and explore web apps in a real browser, with screenshots, video and traces.',
+        ),
+        dittofleetTool(
+          'dropcube',
+          'A write-only file drop for agents on remote machines, with private links for you.',
+        ),
+        dittofleetTool(
+          'navi',
+          'Hey, listen! Phone notifications from coding agents, through ntfy.',
+        ),
+        dittofleetTool('whatagain', 'A todo list for coding agents, scoped to repos.'),
+        dittofleetTool(
+          'rm-to-trash',
+          'rm, but to the Trash, so anything an agent deletes can be recovered.',
+        ),
+        dittofleetTool('skills', 'Agent skills for multi-environment development.'),
+      ],
+    },
+    {
+      name: 'For running many environments',
+      tools: [
+        dittofleetTool(
+          'port-pool',
+          'Hands out unique ports so you can test several worktrees in parallel.',
+        ),
+        dittofleetTool('lichen', 'Keeps dotfiles, configs and agent skills in sync across Macs.'),
+        dittofleetTool(
+          'crosstalk',
+          'Lets the apps on your Macs message each other and share status and settings.',
+        ),
+        dittofleetTool('knockout', 'Shuts a Mac down from another one, through crosstalk.'),
+        dittofleetTool('terrier', 'One registry of your repos, shared by all your other tools.'),
+      ],
+    },
+    {
+      name: 'For your Mac',
+      tools: [
+        dittofleetTool('headroom', 'A menu bar app for your Claude and Codex usage limits.'),
+        dittofleetTool('figment', 'Virtual displays of any size, including 4K and HiDPI.'),
+      ],
+    },
+  ],
+};
 
 export const social = {
   github: 'https://github.com/sylophi',
