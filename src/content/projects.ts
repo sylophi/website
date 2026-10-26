@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
+import samplaryShot from '../assets/screenshots/samplary.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 
@@ -45,6 +46,14 @@ export const webAppTools: Tool[] = [
 ];
 
 export const musicAudioApps: Project[] = [
+  {
+    name: 'samplary',
+    description:
+      'A fast, simple sample manager. Sorts samples by sound, pitch, key and tempo, ready to drag into your DAW.',
+    repoUrl: 'https://github.com/sylophi/samplary',
+    screenshot: samplaryShot,
+    screenshotAlt: 'samplary project preview',
+  },
   {
     name: 'songloupe',
     description:
