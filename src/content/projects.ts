@@ -50,6 +50,7 @@ export const musicAudioApps: Project[] = [
     name: 'samplary',
     description:
       'A fast, simple sample manager. Sorts samples by sound, pitch, key and tempo, ready to drag into your DAW.',
+    url: 'https://github.com/sylophi/samplary/releases/latest',
     repoUrl: 'https://github.com/sylophi/samplary',
     screenshot: samplaryShot,
     screenshotAlt: 'samplary project preview',
