@@ -143,7 +143,6 @@ export const dittofleet = {
           'rm-to-trash',
           'rm, but to the Trash, so anything an agent deletes can be recovered.',
         ),
-        dittofleetTool('skills', 'Agent skills for multi-environment development.'),
       ],
     },
     {
