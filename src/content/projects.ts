@@ -1,9 +1,11 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
+import muShot from '../assets/screenshots/mu.png';
 import samplaryShot from '../assets/screenshots/samplary.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 import daramdropIcon from '../assets/icons/daramdrop.svg';
+import muIcon from '../assets/icons/mu.png';
 import samplaryIcon from '../assets/icons/samplary.svg';
 import shigotoNoMoriIcon from '../assets/icons/shigoto-no-mori.svg';
 import songloupeIcon from '../assets/icons/songloupe.svg';
@@ -105,6 +107,15 @@ export const devApps: Project[] = [
     icon: shigotoNoMoriIcon,
     screenshot: shigotoNoMoriShot,
     screenshotAlt: 'shigoto-no-mori project preview',
+  },
+  {
+    name: 'Mu',
+    description: 'A fast, intuitive file manager for macOS.',
+    url: 'https://github.com/sylophi/Mu/releases/latest',
+    repoUrl: 'https://github.com/sylophi/Mu',
+    icon: muIcon,
+    screenshot: muShot,
+    screenshotAlt: 'Mu project preview',
   },
 ];
 
