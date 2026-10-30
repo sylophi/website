@@ -37,6 +37,30 @@ const NameTag = isLinked ? 'a' : 'span';
 
   <div class="flex flex-col gap-1 px-4 py-3.5">
     <div class="flex items-center gap-2">
+      {
+        project.icon && (
+          <Image
+            src={project.icon}
+            alt=""
+            width={20}
+            height={20}
+            densities={[2, 3]}
+            class:list={['size-5', project.iconDark && 'dark:hidden']}
+          />
+        )
+      }
+      {
+        project.iconDark && (
+          <Image
+            src={project.iconDark}
+            alt=""
+            width={20}
+            height={20}
+            densities={[2, 3]}
+            class="hidden size-5 dark:block"
+          />
+        )
+      }
       <NameTag
         {...isLinked
           ? {

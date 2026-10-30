@@ -3,6 +3,11 @@ import daramdropShot from '../assets/screenshots/daramdrop.png';
 import samplaryShot from '../assets/screenshots/samplary.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
+import daramdropIcon from '../assets/icons/daramdrop.svg';
+import samplaryIcon from '../assets/icons/samplary.svg';
+import shigotoNoMoriIcon from '../assets/icons/shigoto-no-mori.svg';
+import songloupeIcon from '../assets/icons/songloupe.svg';
+import songloupeDarkIcon from '../assets/icons/songloupe-dark.svg';
 
 export type ProjectStatus = 'coming-soon' | 'in-development' | 'alpha' | 'beta' | 'stable';
 
@@ -12,6 +17,9 @@ export type Project = {
   status?: ProjectStatus;
   url?: string;
   repoUrl?: string;
+  icon?: ImageMetadata;
+  // Served in place of icon in dark mode
+  iconDark?: ImageMetadata;
   screenshot: ImageMetadata;
   screenshotAlt: string;
 };
@@ -31,6 +39,7 @@ export const webApps: Project[] = [
     description:
       'A personal stash for things to look at later. Built for quick saving and deep retrieval.',
     status: 'in-development',
+    icon: daramdropIcon,
     screenshot: daramdropShot,
     screenshotAlt: 'daramdrop project preview',
   },
@@ -52,6 +61,7 @@ export const musicAudioApps: Project[] = [
       'A fast, simple sample manager. Sorts samples by sound, pitch, key and tempo, ready to drag into your DAW.',
     url: 'https://github.com/sylophi/samplary/releases/latest',
     repoUrl: 'https://github.com/sylophi/samplary',
+    icon: samplaryIcon,
     screenshot: samplaryShot,
     screenshotAlt: 'samplary project preview',
   },
@@ -61,6 +71,8 @@ export const musicAudioApps: Project[] = [
       'A tool for studying songs. Designed for precise playback and structural analysis.',
     status: 'alpha',
     url: 'https://songloupe.com/',
+    icon: songloupeIcon,
+    iconDark: songloupeDarkIcon,
     screenshot: songloupeShot,
     screenshotAlt: 'songloupe project preview',
   },
@@ -90,6 +102,7 @@ export const devApps: Project[] = [
       'A desktop app for managing many git worktrees. Built around a focused GUI and one-click launchers per worktree.',
     url: 'https://shigomori.com/',
     repoUrl: 'https://github.com/sylophi/shigoto-no-mori',
+    icon: shigotoNoMoriIcon,
     screenshot: shigotoNoMoriShot,
     screenshotAlt: 'shigoto-no-mori project preview',
   },
