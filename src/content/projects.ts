@@ -1,11 +1,13 @@
 import type { ImageMetadata } from 'astro';
 import daramdropShot from '../assets/screenshots/daramdrop.png';
 import muShot from '../assets/screenshots/mu.png';
+import previewerShot from '../assets/screenshots/previewer.png';
 import samplaryShot from '../assets/screenshots/samplary.png';
 import songloupeShot from '../assets/screenshots/songloupe.png';
 import shigotoNoMoriShot from '../assets/screenshots/shigoto-no-mori.png';
 import daramdropIcon from '../assets/icons/daramdrop.svg';
 import muIcon from '../assets/icons/mu.png';
+import previewerIcon from '../assets/icons/previewer.svg';
 import samplaryIcon from '../assets/icons/samplary.svg';
 import shigotoNoMoriIcon from '../assets/icons/shigoto-no-mori.svg';
 import songloupeIcon from '../assets/icons/songloupe.svg';
@@ -117,15 +119,18 @@ export const toolApps: Project[] = [
     screenshot: muShot,
     screenshotAlt: 'Mu project preview',
   },
-];
-
-export const tools: Tool[] = [
   {
     name: 'PReviewer',
     description:
       'A git diffing tool that reviews changes in a full editor with project-wide context.',
     repoUrl: 'https://github.com/sylophi/PReviewer',
+    icon: previewerIcon,
+    screenshot: previewerShot,
+    screenshotAlt: 'PReviewer project preview',
   },
+];
+
+export const tools: Tool[] = [
   {
     name: 'repo-documenter',
     description: "Packages a repo's GitHub PR data into a portable archive.",
