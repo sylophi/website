@@ -7,7 +7,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 import {
   webApps,
   webAppTools,
-  devApps,
+  toolApps,
   tools,
   dittofleet,
   musicAudioApps,
@@ -29,23 +29,42 @@ import {
     </header>
 
     <main class="flex flex-col gap-14">
-      <section aria-labelledby="dev-tools-label">
+      <section aria-labelledby="tools-label">
         <h2
-          id="dev-tools-label"
+          id="tools-label"
           class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
         >
-          Dev tools
+          Tools
         </h2>
         {
-          devApps.length > 0 && (
+          toolApps.length > 0 && (
             <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {devApps.map((app) => (
+              {toolApps.map((app) => (
                 <ProjectCard project={app} />
               ))}
             </div>
           )
         }
         <ToolList tools={tools} />
+      </section>
+
+      <section aria-labelledby="music-audio-label">
+        <h2
+          id="music-audio-label"
+          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
+        >
+          Music &amp; audio
+        </h2>
+        {
+          musicAudioApps.length > 0 && (
+            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              {musicAudioApps.map((app) => (
+                <ProjectCard project={app} />
+              ))}
+            </div>
+          )
+        }
+        <ToolList tools={musicAudioTools} />
       </section>
 
       <section aria-labelledby="dittofleet-label">
@@ -78,25 +97,6 @@ import {
             ))
           }
         </div>
-      </section>
-
-      <section aria-labelledby="music-audio-label">
-        <h2
-          id="music-audio-label"
-          class="mb-4 text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase"
-        >
-          Music &amp; audio
-        </h2>
-        {
-          musicAudioApps.length > 0 && (
-            <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-              {musicAudioApps.map((app) => (
-                <ProjectCard project={app} />
-              ))}
-            </div>
-          )
-        }
-        <ToolList tools={musicAudioTools} />
       </section>
 
       <section aria-labelledby="game-dev-label">

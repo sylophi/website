@@ -97,7 +97,7 @@ export const gameTools: Tool[] = [
   },
 ];
 
-export const devApps: Project[] = [
+export const toolApps: Project[] = [
   {
     name: 'shigoto-no-mori',
     description:
