@@ -63,7 +63,6 @@ export const musicAudioApps: Project[] = [
     name: 'samplary',
     description:
       'A fast, simple sample manager. Sorts samples by sound, pitch, key and tempo, ready to drag into your DAW.',
-    url: 'https://github.com/sylophi/samplary/releases/latest',
     repoUrl: 'https://github.com/sylophi/samplary',
     icon: samplaryIcon,
     screenshot: samplaryShot,
@@ -113,7 +112,6 @@ export const toolApps: Project[] = [
   {
     name: 'Mu',
     description: 'A fast, intuitive file manager for macOS.',
-    url: 'https://github.com/sylophi/Mu/releases/latest',
     repoUrl: 'https://github.com/sylophi/Mu',
     icon: muIcon,
     screenshot: muShot,
